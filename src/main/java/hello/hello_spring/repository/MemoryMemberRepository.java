@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.*;
 
-@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>(); //Map<id, (id,name)>

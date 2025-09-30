@@ -1,7 +1,9 @@
 package hello.hello_spring.service;
 
 import hello.hello_spring.domain.Member;
+import hello.hello_spring.repository.MemberRepository;
 import hello.hello_spring.repository.MemoryMemberRepository;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,11 +16,11 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 @SpringBootTest
 @Transactional
-
 class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
-    @Autowired MemberRepository memberRepository;
+    @Autowired
+    MemberRepository memberRepository;
 
     @Test
     void 회원가입() {
